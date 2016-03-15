@@ -50,3 +50,17 @@
 		<li><?php echo $this->Html->link(__('New Bay'), array('controller' => 'bays', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+
+
+<table>
+	<tr>
+		<td>
+			HOLA
+			<?= $this->Html->link('export', [
+	'controller' => 'spots', 
+	'action' => 'export',
+	'_ext' => 'csv'
+]) ?>
+		</td>
+	</tr>
+</table>

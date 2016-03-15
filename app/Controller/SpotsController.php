@@ -13,7 +13,8 @@ class SpotsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator','CsvView.CsvView');
+
 
 /**
  * index method
@@ -104,5 +105,13 @@ class SpotsController extends AppController {
 			$this->Flash->error(__('The spot could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+	public function export(){
+		$spots=$this->Spot->find('all');
+		$bays = $this->Spot->Bay->find('all');
+		$excludePaths = array('Spot.id', 'Bay.id', 'Spot.bay_id','Bay.region_id'); // Exclude all id fields
+		$this->CsvView->quickExport($spots,$excludePaths);
+		return;
+
 	}
 }
