@@ -107,10 +107,15 @@ class SpotsController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 	public function export(){
+		$this->response->download('export.csv');
 		$spots=$this->Spot->find('all');
-		$bays = $this->Spot->Bay->find('all');
-		$excludePaths = array('Spot.id', 'Bay.id', 'Spot.bay_id','Bay.region_id'); // Exclude all id fields
-		$this->CsvView->quickExport($spots,$excludePaths);
+		$_serialize='spots';
+		$_header=array('Spot','Depth','Bay','Region','Country');
+		$excludePaths = array('Spot.id', 'Bay.id', 'Spot.bay_id','Bay.region_id','Bay.Region.id'); // Exclude all id fields
+		$_extract=$this->CsvView->prepareExtractFromFindResults($spots,$excludePaths);
+		print_r($_extract);
+		$this->viewClass='CsvView.Csv';
+		$this->set(compact('spots','_serialize','_header','_extract'));
 		return;
 
 	}

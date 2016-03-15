@@ -13,7 +13,7 @@ class Spot extends AppModel {
  * @var string
  */
 	public $displayField = 'name';
-
+	public $recursive=2;
 /**
  * Validation rules
  *
