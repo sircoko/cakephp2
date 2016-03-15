@@ -1,0 +1,21 @@
+** READ THIS:
+
+[05/03/2016 09:42:45 p.m.] Ravage: General stuff about CakePHP:
+http://book.cakephp.org/2.0/en/index.html
+http://book.cakephp.org/2.0/en/installation.html  (only general stuff and your webserver)
+http://book.cakephp.org/2.0/en/getting-started.html (everything)
+http://book.cakephp.org/2.0/en/cakephp-overview.html (everything)
+
+Controller:
+http://book.cakephp.org/2.0/en/controllers.html (the main page)
+
+Model:
+http://book.cakephp.org/2.0/en/models.html
+http://book.cakephp.org/2.0/en/models/associations-linking-models-together.html
+http://book.cakephp.org/2.0/en/models/retrieving-your-data.html
+http://book.cakephp.org/2.0/en/models/saving-your-data.html
+[05/03/2016 09:43:00 p.m.] Ravage: This will give you a good base knowledge about CakePHP
+
+
+** Build a CRUD for diving spots
+	regions->bays->spots
