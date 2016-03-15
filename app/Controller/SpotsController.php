@@ -113,7 +113,6 @@ class SpotsController extends AppController {
 		$_header=array('Spot','Depth','Bay','Region','Country');
 		$excludePaths = array('Spot.id', 'Bay.id', 'Spot.bay_id','Bay.region_id','Bay.Region.id'); // Exclude all id fields
 		$_extract=$this->CsvView->prepareExtractFromFindResults($spots,$excludePaths);
-		print_r($_extract);
 		$this->viewClass='CsvView.Csv';
 		$this->set(compact('spots','_serialize','_header','_extract'));
 		return;
